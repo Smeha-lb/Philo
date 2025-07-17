@@ -10,6 +10,7 @@ SRCFILES	= main.c \
 			  init.c \
 			  philosopher.c \
 			  monitor.c \
+			  monitor2.c \
 			  utils.c
 
 SRCS		= $(addprefix $(SRCDIR)/, $(SRCFILES))
