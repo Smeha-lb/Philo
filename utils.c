@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: csamaha <csamaha@student.42beirut.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/17 14:06:37 by csamaha           #+#    #+#             */
+/*   Updated: 2025/07/17 14:06:37 by csamaha          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo.h"
 
 long	get_current_time_ms(void)
@@ -33,8 +45,8 @@ void	precise_sleep(long duration_ms)
 	{
 		current_time = get_current_time_ms();
 		if (current_time - start_time >= duration_ms)
-			break;
-		usleep(500);
+			break ;
+		usleep(100);
 	}
 }
 
@@ -67,4 +79,4 @@ void	free_allocated_memory(t_data *data)
 		free(data->forks);
 		data->forks = NULL;
 	}
-} 
+}

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: csamaha <csamaha@student.42beirut.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/17 14:06:04 by csamaha           #+#    #+#             */
+/*   Updated: 2025/07/17 14:06:04 by csamaha          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo.h"
 
 int	main(int argc, char **argv)
@@ -72,7 +84,7 @@ int	start_simulation(t_data *data)
 	{
 		data->philosophers[i].last_meal_time = data->start_time;
 		if (pthread_create(&data->philosophers[i].thread, NULL,
-			philosopher_routine, &data->philosophers[i]) != 0)
+				philosopher_routine, &data->philosophers[i]) != 0)
 			return (0);
 		i++;
 	}
@@ -93,4 +105,4 @@ void	cleanup_and_exit(t_data *data, int exit_code)
 	cleanup_mutexes(data);
 	free_allocated_memory(data);
 	exit(exit_code);
-} 
+}

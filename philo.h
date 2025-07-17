@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   philo.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: csamaha <csamaha@student.42beirut.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/17 14:06:31 by csamaha           #+#    #+#             */
+/*   Updated: 2025/07/17 14:06:31 by csamaha          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PHILO_H
 # define PHILO_H
 
@@ -8,12 +20,14 @@
 # include <sys/time.h>
 # include <string.h>
 
-typedef struct s_fork {
+typedef struct s_fork
+{
 	pthread_mutex_t	mutex;
 	int				id;
 }	t_fork;
 
-typedef struct s_philo {
+typedef struct s_philo
+{
 	int				id;
 	long			last_meal_time;
 	int				meals_eaten;
@@ -23,7 +37,8 @@ typedef struct s_philo {
 	pthread_t		thread;
 }	t_philo;
 
-typedef struct s_data {
+typedef struct s_data
+{
 	int				philo_count;
 	long			time_to_die;
 	long			time_to_eat;

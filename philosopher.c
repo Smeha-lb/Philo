@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   philosopher.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: csamaha <csamaha@student.42beirut.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/17 14:06:35 by csamaha           #+#    #+#             */
+/*   Updated: 2025/07/17 14:06:35 by csamaha          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo.h"
 
 void	*philosopher_routine(void *arg)
@@ -17,11 +29,11 @@ void	*philosopher_routine(void *arg)
 		if (philo->data->simulation_ended)
 		{
 			pthread_mutex_unlock(&philo->data->data_mutex);
-			break;
+			break ;
 		}
 		pthread_mutex_unlock(&philo->data->data_mutex);
 		if (!take_forks(philo))
-			break;
+			break ;
 		eat_routine(philo);
 		sleep_routine(philo);
 		think_routine(philo);
@@ -69,4 +81,4 @@ void	sleep_routine(t_philo *philo)
 void	think_routine(t_philo *philo)
 {
 	safe_print(philo->data, philo->id, "is thinking");
-} 
+}
